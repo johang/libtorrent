@@ -31,6 +31,7 @@ branches:
     - master
     - RC_1_1
     - RC_1_0
+    - new-disk-io
 
 cache:
   directories:
