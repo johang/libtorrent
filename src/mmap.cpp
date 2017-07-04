@@ -114,11 +114,11 @@ namespace {
 
 	int file_flags(open_mode_t const mode)
 	{
-		return (test(mode & open_mode_t::write))
-			? O_RDWR | O_CREAT : O_RDONLY
+		return (test(mode & open_mode_t::write)
+			? O_RDWR | O_CREAT : O_RDONLY)
 #ifdef O_NOATIME
-			| test(mode & open_mode_t::noatime)
-			? O_NOATIME : 0
+			| (test(mode & open_mode_t::no_atime)
+			? O_NOATIME : 0)
 #endif
 			;
 	}
@@ -132,10 +132,13 @@ namespace {
 
 	int mmap_flags(open_mode_t const m)
 	{
-		return (test(m & open_mode_t::no_cache)
+		return
+			MAP_FILE | MAP_SHARED
+#ifdef MAP_NOCACHE
+			| (test(m & open_mode_t::no_cache)
 			? MAP_NOCACHE
 			: 0)
-			| MAP_FILE | MAP_SHARED
+#endif
 #ifdef MAP_NOCORE
 			// BSD has a flag to exclude this region from core files
 			| MAP_NOCORE

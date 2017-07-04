@@ -535,7 +535,7 @@ namespace libtorrent {
 			// we're writing to it
 			m_stat_cache.set_dirty(file_index);
 
-			boost::optional<aux::file_view> handle = open_file(sett, file_index
+			auto handle = open_file(sett, file_index
 				, aux::open_mode_t::write | flags, ec);
 			if (ec) return -1;
 

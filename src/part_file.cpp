@@ -176,7 +176,7 @@ namespace libtorrent {
 		, int const offset, error_code& ec)
 	{
 		TORRENT_ASSERT(offset >= 0);
-		TORRENT_ASSERT(bufs.size() + offset <= std::size_t(m_piece_size));
+		TORRENT_ASSERT(int(bufs.size()) + offset <= m_piece_size);
 		std::unique_lock<std::mutex> l(m_mutex);
 
 		open_file(open_mode_t::read_write, ec);
@@ -197,7 +197,7 @@ namespace libtorrent {
 		, int const offset, error_code& ec)
 	{
 		TORRENT_ASSERT(offset >= 0);
-		TORRENT_ASSERT(bufs.size() + offset <= std::size_t(m_piece_size));
+		TORRENT_ASSERT(int(bufs.size()) + offset <= m_piece_size);
 		std::unique_lock<std::mutex> l(m_mutex);
 
 		auto const i = m_piece_map.find(piece);
@@ -224,7 +224,7 @@ namespace libtorrent {
 		, int const offset, error_code& ec)
 	{
 		TORRENT_ASSERT(offset >= 0);
-		TORRENT_ASSERT(int(len + offset) <= m_piece_size);
+		TORRENT_ASSERT(int(len) + offset <= m_piece_size);
 		std::unique_lock<std::mutex> l(m_mutex);
 
 		auto const i = m_piece_map.find(piece);
