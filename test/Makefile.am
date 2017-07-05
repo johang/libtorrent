@@ -50,7 +50,7 @@ test_programs = \
   test_session_params        \
   test_span                  \
   test_alloca                \
-  test_mmap                  \
+  test_mmap
 
 
 if ENABLE_TESTS
