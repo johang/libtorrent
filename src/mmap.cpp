@@ -132,6 +132,7 @@ namespace {
 
 	int mmap_flags(open_mode_t const m)
 	{
+		TORRENT_UNUSED(m);
 		return
 			MAP_FILE | MAP_SHARED
 #ifdef MAP_NOCACHE
