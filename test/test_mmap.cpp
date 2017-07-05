@@ -58,7 +58,7 @@ TORRENT_TEST(mmap_read)
 		file.write(buf.data(), buf.size());
 	}
 
-	auto m = std::make_shared<file_mapping>(file_handle("test_file1", 100, open_mode_t::read_only)
+	auto m = std::make_shared<file_mapping>(aux::file_handle("test_file1", 100, open_mode_t::read_only)
 		, open_mode_t::read_only, 100);
 
 	file_view v = m->view();
@@ -73,7 +73,7 @@ TORRENT_TEST(mmap_write)
 	std::vector<char> buf = filled_buffer(100);
 
 	{
-		auto m = std::make_shared<file_mapping>(file_handle("test_file2", 100
+		auto m = std::make_shared<file_mapping>(aux::file_handle("test_file2", 100
 				, open_mode_t::write | open_mode_t::truncate)
 			, open_mode_t::write | open_mode_t::truncate, 100);
 

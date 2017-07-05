@@ -48,7 +48,6 @@ nobase_include_HEADERS = \
   export.hpp                   \
   extensions.hpp               \
   file.hpp                     \
-  file_view_pool.hpp           \
   file_storage.hpp             \
   fingerprint.hpp              \
   flags.hpp                    \
@@ -210,6 +209,7 @@ nobase_include_HEADERS = \
   aux_/noexcept_movable.hpp         \
   aux_/mmap.hpp                     \
   aux_/store_buffer.hpp             \
+  aux_/file_view_pool.hpp           \
   aux_/posix_storage.hpp            \
   aux_/open_mode.hpp                \
   \

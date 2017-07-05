@@ -118,7 +118,7 @@ TRY_SIGNAL_SOURCE = \
   deps/try_signal/try_signal.cpp \
   deps/try_signal/try_signal.hpp \
   deps/try_signal/signal_error_code.cpp \
-  deps/try_signal/signal_error_code.hpp \
+  deps/try_signal/signal_error_code.hpp
 
 EXTRA_DIST = \
   Jamfile \
@@ -129,8 +129,8 @@ EXTRA_DIST = \
   README.rst \
   $(DOCS_PAGES) \
   $(DOCS_IMAGES) \
-  $(ED25519_SOURCE)
-  $(TRY_SIGNAL_SOURCE) \
+  $(ED25519_SOURCE) \
+  $(TRY_SIGNAL_SOURCE)
 
 pkgconfigdir   = $(libdir)/pkgconfig
 pkgconfig_DATA = libtorrent-rasterbar.pc

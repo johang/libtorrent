@@ -31,9 +31,9 @@ KADEMLIA_SOURCES = \
   ../ed25519/src/sc.cpp         \
   ../ed25519/src/sign.cpp       \
   ../ed25519/src/verify.cpp     \
-  hasher512.cpp
+  hasher512.cpp                 \
   ../deps/try_signal/try_signal.cpp \
-  ../deps/try_signal/signal_error_code.cpp \
+  ../deps/try_signal/signal_error_code.cpp
 endif
 
 if ! WITH_OPENSSL
